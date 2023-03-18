@@ -1,15 +1,27 @@
 #coding:gbk
 import requests
-from typing import List
+
 import json
 def userMsgCreat(msg:str) -> dict:
+    '''
+    msg:用于构造用户回复内容
+    '''
+    #用户信息工厂
     return {"role": "user", "content": msg}
 
+
 def aiMsgCreat(msg:str) -> dict:
+    '''
+    msg:用于构造ai回复内容
+    '''
+    #ai信息工厂
     return {"role": "assistant", "content": msg}
 
 def get_chat(msg:list) -> str:
-    url = "http://104.168.136.237:5701/chat2"
+    """
+    msg：纪录上下文信息
+    """
+    url = "http://url/chat2"  #url填入服务端域名或者公网IP
 
 
     data = {"msg": msg}
@@ -28,5 +40,5 @@ while True:
     if rp != "quit":
         msg.append(aiMsgCreat(rp))
     else:
-        print("������")
+        print("³ö´íÀ±")
         break
