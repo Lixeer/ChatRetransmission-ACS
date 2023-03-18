@@ -3,7 +3,7 @@ from pydantic import BaseModel
 import openai
 
 url = 'https://api.openai.com/v1/chat/completions'
-openai.api_key = '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'
+openai.api_key = 'YOUR-KEY'
 
 
 
