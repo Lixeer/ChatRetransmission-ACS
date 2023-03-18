@@ -1,2 +1,4 @@
 # ChatRetransmission-ACS
 基于python实现的chatgpt上下文代理异步服务端
+
+S-main.py文件在服务端部署
