@@ -1,48 +1,32 @@
-from fastapi import FastAPI
-from pydantic import BaseModel
-import openai
+#coding:gbk
+import requests
+from typing import List
+import json
+def userMsgCreat(msg:str) -> dict:
+    return {"role": "user", "content": msg}
 
-url = 'https://api.openai.com/v1/chat/completions'
-openai.api_key = 'YOUR-KEY'
+def aiMsgCreat(msg:str) -> dict:
+    return {"role": "assistant", "content": msg}
 
-
-
-app = FastAPI()
-
-def chat(ID:str,msg:list):
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[{
-            "role": "user", "content": msg
-        }]
-    )
-    a = response['choices'][0]['message']['content']
-    return a
+def get_chat(msg:list) -> str:
+    url = "http://104.168.136.237:5701/chat2"
 
 
-
-class Form(BaseModel):
-    ID: str
-    msg: list
-
-@app.post("/chat")
-async def _(form: Form):
-    if form == "":
-        pass
+    data = {"msg": msg}
+    response = requests.post(url, json=data)
+    if response.status_code == 200:
+        return response.json()['choices'][-1]['message']['content']
     else:
-        rp = chat(form.msg)
+        return "quit"
+msg=[]
 
-    return rp
-
-
-
-
-@app.get("/")
-async def hello_world():
-    return {"message": "你好"}
-
-
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=5700)
+while True:
+    iss = input()
+    msg.append(userMsgCreat(iss))
+    rp = get_chat(msg)
+    print(rp)
+    if rp != "quit":
+        msg.append(aiMsgCreat(rp))
+    else:
+        print("出错辣")
+        break
