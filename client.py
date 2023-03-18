@@ -40,5 +40,5 @@ while True:
     if rp != "quit":
         msg.append(aiMsgCreat(rp))
     else:
-        print("³ö´íÀ±")
+        print("出错了")
         break
