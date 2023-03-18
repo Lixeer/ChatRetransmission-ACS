@@ -9,5 +9,5 @@ client.py文件在本地可以直接使用，但是需要配置好服务端。�
 
 有bug希望及时反馈。
 
-感谢 
+感谢 cfwasd https://github.com/cfwasd/ChatRetransmission-ACS 的帮助
 
