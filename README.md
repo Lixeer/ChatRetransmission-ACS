@@ -16,9 +16,10 @@ client.py文件在本地可以直接使用，但是需要配置好服务端。�
 服务端建议选择国外vps的最低配置即可。
 
 ## TODO
-- [ ] 未完成任务1
-[] 请求冷却系统
-[] 高性能异步IO
+- [ ] 请求冷却系统
+- [ ] 客户端代理(组件API)
+- [ ] 高性能异步请求
+
 
 有bug希望及时反馈。
 感谢  https://github.com/cfwasd/ChatRetransmission-ACS 
