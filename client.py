@@ -1,4 +1,4 @@
-#coding:gbk
+
 import requests
 
 import json
