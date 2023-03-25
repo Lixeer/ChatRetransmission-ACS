@@ -1,9 +1,10 @@
 from flask import Flask, jsonify, request
-
+import os
 app = Flask(__name__)
 
 import openai
-openai.api_key="这里填入你的KEY"
+#从环境变量中读取OPENAI_API_KEY
+openai.api_key = os.getenv("OPENAI_API_KEY")
 def chat(msg:list):
     rp=openai.ChatCompletion.create(
         model="gpt-3.5-turbo",

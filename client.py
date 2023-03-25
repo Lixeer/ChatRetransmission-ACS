@@ -1,27 +1,26 @@
-#coding:gbk
 import requests
 
 import json
 def userMsgCreat(msg:str) -> dict:
     '''
-    msg:ç”¨äºæ„é€ ç”¨æˆ·å›å¤å†…å®¹
+    msg:ÓÃÓÚ¹¹ÔìÓÃ»§»Ø¸´ÄÚÈİ
     '''
-    #ç”¨æˆ·ä¿¡æ¯å·¥å‚
+    #ÓÃ»§ĞÅÏ¢¹¤³§
     return {"role": "user", "content": msg}
 
 
 def aiMsgCreat(msg:str) -> dict:
     '''
-    msg:ç”¨äºæ„é€ aiå›å¤å†…å®¹
+    msg:ÓÃÓÚ¹¹Ôìai»Ø¸´ÄÚÈİ
     '''
-    #aiä¿¡æ¯å·¥å‚
+    #aiĞÅÏ¢¹¤³§
     return {"role": "assistant", "content": msg}
 
 def get_chat(msg:list) -> str:
     """
-    msgï¼šçºªå½•ä¸Šä¸‹æ–‡ä¿¡æ¯
+    msg£º¼ÍÂ¼ÉÏÏÂÎÄĞÅÏ¢
     """
-    url = "http://url/chat2"  #urlå¡«å…¥æœåŠ¡ç«¯åŸŸåæˆ–è€…å…¬ç½‘IP
+    url = "http://127.0.0.1:5701/chat"  #urlÌîÈë·şÎñ¶ËÓòÃû»òÕß¹«ÍøIP
 
 
     data = {"msg": msg}
@@ -40,5 +39,5 @@ while True:
     if rp != "quit":
         msg.append(aiMsgCreat(rp))
     else:
-        print("å‡ºé”™äº†")
+        print("³ö´íÁË")
         break
