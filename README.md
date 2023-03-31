@@ -10,6 +10,14 @@ __作者是真IKUN__
 ![](https://github.com/Lixeer/ChatRetransmission-ACS/blob/main/resource/U%5D1781U%2560VX00KKHST%24MH4.png)
 ## 食用方法
 ACS-main.py文件在服务端部署，默认端口：5702（一般不会冲突，冲突修改就行 冲突请修改config.py）。
+```python
+#config.py
+PORT=5702 #修改这一行
+```
+```
+python ACS-main.py
+```
+即可
 
 client.py文件在本地可以直接使用，但是需要配置好服务端。在url中填入正确的服务端域名或者IP。
 
