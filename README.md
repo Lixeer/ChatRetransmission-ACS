@@ -1,5 +1,5 @@
 # ChatRetransmission-ACS
-
+![](https://github.com/Lixeer/ChatRetransmission-ACS/blob/main/resource/qxlarge-dsc-375E24F76A8D07723A207852AA5C313D_1.jpg)
 ## 这是嘛玩应
 基于python实现的chatgpt上下文代理异步镜像服务端1.2.0
 ## 效果图
